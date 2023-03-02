@@ -31,7 +31,7 @@ jobs:
   docker-release:
     runs-on: ubuntu-latest
     needs: semantic-release
-    if: needs.semantic-release.outputs.published == 'True'
+    # if: needs.semantic-release.outputs.published == 'True'
     permissions:
       packages: write
     strategy:
