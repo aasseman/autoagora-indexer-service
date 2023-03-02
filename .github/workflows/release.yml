@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - release_test
 
 jobs:
   semantic-release:
