@@ -23,10 +23,6 @@ jobs:
         uses: relekang/python-semantic-release@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Get Latest Tag
-        id: previoustag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
     
   docker-release:
     runs-on: ubuntu-latest
@@ -54,6 +50,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/autoagora-indexer-service:${{ needs.semantic-release.outputs.version }}-${{ matrix.indexer-version }}
+          tags: ghcr.io/aasseman/autoagora-indexer-service:${{ needs.semantic-release.outputs.version }}-${{ matrix.indexer-version }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
