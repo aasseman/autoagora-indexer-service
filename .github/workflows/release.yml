@@ -39,6 +39,7 @@ jobs:
     strategy:
       matrix:
         indexer-version: [0.20.8, 0.20.11]
+    concurrency: "docker-release"
 
     steps:
       - uses: actions/checkout@v3
