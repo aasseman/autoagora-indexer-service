@@ -2,7 +2,7 @@ name: Docker Test
 
 on:
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "release_test" ]
 
 jobs:
   docker-test:
